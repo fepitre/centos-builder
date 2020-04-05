@@ -5,7 +5,7 @@
 #   Script for generating a kickstarted CentOS 7 ISO
 #
 
-[[ VERBOSE -ge 2 ]] && set -x
+[[ $VERBOSE -ge 2 ]] && set -x
 
 [[ "x$VERBOSE" == "x" ]] && VERBOSE=0
 
@@ -48,7 +48,7 @@ exit_builder() {
 }
 
 echo_verb() {
-    if [[ VERBOSE -ge 1 ]]; then
+    if [[ $VERBOSE -ge 1 ]]; then
         echo "$@"
     fi
 }
