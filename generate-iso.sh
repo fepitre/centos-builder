@@ -111,7 +111,7 @@ mkdir -p "$TMPDIR" "$MOUNTDIR" "$ISODIR" "$LOGDIR" "$DESTDIR"
 if [ "x$CENTOS_ISO_MINIMAL" == "x" ]; then
     echo_verb "--> Downloading CentOS minimal ISO..."
 #    CENTOS_ISO_MINIMAL="https://buildlogs.centos.org/rolling/7/isos/x86_64/CentOS-7-x86_64-Minimal.iso"
-    CENTOS_ISO_MINIMAL="http://centos.crazyfrogs.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso"
+    CENTOS_ISO_MINIMAL="http://centos.crazyfrogs.org/7.8.2003/isos/x86_64/CentOS-7-x86_64-Minimal-2003.iso"
     wget -q -c -O "$TMPDIR/CentOS-7-x86_64-Minimal.iso" "$CENTOS_ISO_MINIMAL"
     CENTOS_ISO_MINIMAL="$TMPDIR/CentOS-7-x86_64-Minimal.iso"
 fi
