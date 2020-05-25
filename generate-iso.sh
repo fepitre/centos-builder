@@ -59,6 +59,7 @@ while [[ $# -gt 0 ]]; do
         --kickstart)
             if [[ -z $2 || ! -e "$(readlink -f "$2")" ]]; then
                 echo "Please provide a kickstart file"
+                exit 1
             else
                 KICKSTART="$(readlink -f "$2")"
             fi
@@ -66,6 +67,7 @@ while [[ $# -gt 0 ]]; do
         --sourceiso)
             if [[ -z $2 || ! -e "$(readlink -f "$2")" ]]; then
                 echo "Please provide an existing CentOS iso"
+                exit 1
             else
                 CENTOS_ISO_MINIMAL="$(readlink -f "$2")"
             fi
@@ -73,6 +75,7 @@ while [[ $# -gt 0 ]]; do
         --destdir)
             if [[ -z $2 ]]; then
                 echo "Please provide a destination directory"
+                exit 1
             else
                 DESTDIR="$(readlink -f "$2")"
             fi
