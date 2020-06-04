@@ -134,7 +134,8 @@ cp "$KICKSTART" "$ISODIR/ks/ks.cfg"
 ## Create local repository
 echo_verb "--> Creating local rpm repository..."
 PACKAGES="$(sed -n '/%packages/,/%end/p;/%end/q' "$ISODIR/ks/ks.cfg" | sed '1d; /%end/d' | sed 's/\#.*//g; s/[[:blank:]]*//g; s/^-/--exclude=/g' | tr '\n' ' ')"
-yumdownloader --disablerepo=* --enablerepo=base,updates,extras,epel \
+# shellcheck disable=2086,2154
+yumdownloader $yum_opts \
     @anaconda-tools @base \
     $PACKAGES --releasever=7 \
     --resolv -x \*i686 --arch=x86_64 \
